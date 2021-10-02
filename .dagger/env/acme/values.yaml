@@ -1,0 +1,34 @@
+plan:
+    package: ./examples/acme
+name: acme
+inputs:
+    authToken:
+        secret: ENC[AES256_GCM,data:FR7Ozp17jIfNn1UtPQGo8b7NpiQqOrB6jJZ5AEFbrrFV4gseIqaHiA==,iv:ZUVH+pPHVKtKgdFS9AWtwzyIE15SHZY6+bASkksv2HY=,tag:5h3ssgy4mBGR/W6aa+FW4g==,type:str]
+    config.gitAuthToken:
+        secret: ENC[AES256_GCM,data:gjiHns5Vi3K5sc9CVsISGS2rPlQt+AYxEW61BUZ028hvV22Z07BTnw==,iv:n6xxGOZKTWta91AHQ/fiXslNrPUO4WbNPXRl6xmNS1U=,tag:HU+Vs57WHocbOgD+DYrTBw==,type:str]
+    config.netlifyAccount.token:
+        secret: ENC[AES256_GCM,data:ZJNkfkQptQqydNCEMaYmTD2c1xHk8MJOsrKmgEWs5FM38VBAt+JRoBtzuQ==,iv:GZR+vwBy/HmFhnp1vdNVDGsvFcmv0MO6xco3qHYWr0s=,tag:wrsFfq+0xzpbeqgRhECNQA==,type:str]
+    deployment.refs.email:
+        text: guillaume.derouville@gmail.com
+    deployment.refs.name:
+        text: grouville
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1gxwmtwahzwdmrskhf90ppwlnze30lgpm056kuesrxzeuyclrwvpsupwtpk
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB6VzlrdWovWGt1dnB5cnJE
+            d0paQm1mdmhVMmsyV0Z2eHQxZStFKytUZmkwCllCRkZ3VXNrWU5TbW1SWkszR09Y
+            TVBGRWQvSHVRdlQ4dytwVW4zV21CeHcKLS0tIGZLY25YODIzaDNzMUd4K29yNkdm
+            YkZZd01TYXlBZXR2UUFmWEtTaWxuYWcKO85y4cq2YCwY/49IYt2dM3wt5d2pemWz
+            iWk4CL8Ph/tp9kJNUO2OV2dYMxkfzaEJv2VVEhJO5BDMHupPkcC7lw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2021-09-29T14:23:32Z"
+    mac: ENC[AES256_GCM,data:SAYs7ipm2M6aZ8aS9bOp7gcq+FicMzxijMR+nsPiSb9OiPo3OWP4cUCt0fSAO0jE2qgslLFTsEsirpmgwyPbNqBI9bPCyaLyumZM22hv+mUkNvz2bCZqVWp9zgc6uT4fOND/HzSzuwDf11Ozohn+77JQj+g15EIZ7MywvXa3Yv0=,iv:ye5nVLed4S5FB2gKJWu1HZj3l//FnYBLtAdVoX+PAwQ=,tag:9Px9ny5zJRxOT8Wn7d3H/A==,type:str]
+    pgp: []
+    encrypted_suffix: secret
+    version: 3.7.1
