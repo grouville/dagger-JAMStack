@@ -12,7 +12,7 @@ import(
 		}
 		script: "build:client"
 		buildDir: "public"
-		cwd: "./crate/code/web"
+		cwd: "./code/web"
 	}
 	gitRepo: {
 		name: "grouville"

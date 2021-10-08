@@ -6,7 +6,7 @@ import (
 	// "strings"
 
 	"alpha.dagger.io/dagger"
-	"alpha.dagger.io/netlify"
+	// "alpha.dagger.io/netlify"
 	"alpha.dagger.io/js/yarn"
 
 	multistage "github.com/grouville/dagger-multistaging/multistage"
@@ -60,36 +60,45 @@ refs: {
 
 // tmpCheckouts: 
 
-deployments: multistage.#Multistaging & {
-	checkouts: {
-		multistage.#Checkouts & {
-			"refs": json.Unmarshal(refs)
-			authToken: auth.git
-		}
-	}.out
+deploys: {
+	multistage.#Multistaging & {
+		checkouts: {
+			multistage.#Checkouts & {
+				"refs": json.Unmarshal(refs)
+				authToken: auth.git
+			}
+		}.out
 
-	#template: {
-		// Implement the standard #SimpleApp
-		name: string
-		src: dagger.#Artifact
+		#template: {
+			// Implement the standard #SimpleApp
+			name: string
+			src: dagger.#Artifact
 
-		app: yarn.#Package & {
-			"source": src
-			"script": yarnBuild.script
-			"buildDir": yarnBuild.buildDir
-			"env": yarnBuild.env
-			"cwd": yarnBuild.cwd
-		}
+			app: yarn.#Package & {
+				"source": src
+				"script": yarnBuild.script
+				"buildDir": yarnBuild.buildDir
+				"env": yarnBuild.env
+				"cwd": yarnBuild.cwd
+			}
 
-		// jo: app.build
-		// App-specific deployment config goes here:
-		site: netlify.#Site & {
-			account: token: auth.netlify
-			contents: app.build
-			"name": name
-			// strings.Replace(
-		// 		strings.Replace(name, "/", "-", -1),
-		// 	".", "_", -1)
+			// jo: app.build
+			// App-specific deployment config goes here:
+			// site: netlify.#Site & {
+			// 	account: token: auth.netlify
+			// 	contents: app.build
+			// 	"name": name
+				// strings.Replace(
+			// 		strings.Replace(name, "/", "-", -1),
+			// 	".", "_", -1)
+			// }
 		}
+	}
+}.deployments
+
+debug: {
+	[string]: {...}
+	for key, val in deploys {
+		"\(key)": val
 	}
 }

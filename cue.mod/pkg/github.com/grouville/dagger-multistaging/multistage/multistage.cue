@@ -24,7 +24,8 @@ import (
 	// Live deployment (one per checkout)
 	deployments: {
 		[string]: {
-			#template
+			src: dagger.#Artifact
+			name: string
 			...
 		}
 		for name, checkout in checkouts {
