@@ -1,0 +1,28 @@
+plan:
+    package: ./acme
+name: acme
+inputs:
+    auth.git:
+        secret: ENC[AES256_GCM,data:s7Dzf2AWsj/jmYcsaCbwv8Ly7NH3lpAkB8ZnekmBgPQbiOkNPfCmQQ==,iv:MyLAYOYO95jk5jremZ/FtkzV5os7FX3yEsZxsR1jRF8=,tag:iEQGHtPjGzRjVrP8gKyvKQ==,type:str]
+    auth.netlify:
+        secret: ENC[AES256_GCM,data:6R75RFZjcO2xtFUl8nx3BJTY4jFnnrokIDmWVQz/rjg95rEyDWYm9HxZ8w==,iv:VFqGPKzjbJpLB8MSwRT8fSwPw8Jpuk9lUtcc2EngGQY=,tag:7ZTQkUC0MuaHvL9PD1ahkw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1gxwmtwahzwdmrskhf90ppwlnze30lgpm056kuesrxzeuyclrwvpsupwtpk
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHRzdzdHI4MzZPdGptRVo4
+            U01YVWRkZ2l6dW1sUVJEb1g5WVZnT0lObWlvCitwMmlyZnhIV1B4ZGlTU3RZUzcw
+            anJGNlFPSWZzRU1yemdLcWNGRXBKeU0KLS0tIExHTmw0anllV3Zqenovd25lanVi
+            VE1nUFgydnZNRmp4LzhpTW9mVkRPWVkKIYnDshkpp3hc9T/asKGchILx6X6NDosY
+            dAxk9qRrBrkAKV+oG27QHtzYTZ0qyS2YFme7pgDbnj/PqHoJMqpqzQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2021-10-07T15:25:49Z"
+    mac: ENC[AES256_GCM,data:nYH/xkI2DW6gEfMDIdQoaleyS/lVPtpG9VEnIBQaS3i7SUndxm1baaq6GXCJMbdeHJo26xFuDxWrJRM4elpUVsFXtIZ4SrDw+UpEyvNTqKbJGsBdI8SwrwM3AiasRKJSrwYnINAxDl86P+bCoIGGCSQkLP6ClJ4553CjHOA4EkA=,iv:OsHjVuSWzDIUOhekOT2UdrBOWXqt3hMjFoScB/zUtv4=,tag:uoby3yx5X0sz4xdeHbfSUw==,type:str]
+    pgp: []
+    encrypted_suffix: secret
+    version: 3.7.1
